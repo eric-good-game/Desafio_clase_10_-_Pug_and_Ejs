@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('partials/head') %>
+  <link rel="stylesheet" href="styles/products.css">
+  <title>Template enginer with ejs</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Productos</h1>
+    <div class="scroll">
+      <table id="product_table">
+        <thead>
+          <tr>
+            <% table_headers.forEach(title=>{ %>
+              <th><%=title%></th>
+            
+            <%}) %>
+          </tr>
+        </thead>
+        <% products.forEach(product=>{ %>
+          <tr class="item">
+            <td class="thumbnail"><img src=<%=product.thumbnail%> alt="" /></td>
+            <td class="name"><p><%=product.name%></p></td>
+            <td class="price">
+              <div>
+                <p>$</p>
+                <p><%=product.price%></p>
+              </div>
+            </td>
+          </tr>
+        <% }) %>
+        <% if(!products.length){%>
+          <tr>
+            <td colspan="3">No hay productos.</td>
+          </tr>
+        <% }%>
+      </table>
+    </div>
+    <a href="http://localhost:8080">Añadir producto</a>
+  </div>
+  <%- include('partials/foo') %>
+  <script src="scripts/products.js"></script>
+</body>
+</html>

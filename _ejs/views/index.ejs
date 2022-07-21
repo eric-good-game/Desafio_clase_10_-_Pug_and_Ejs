@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <%- include('partials/head') %>
+  <link rel="stylesheet" href="styles/index.css">
+  <link rel="stylesheet" href="styles/animations.css">
+  <title>Template enginer with ejs</title>
+</head>
+<body>
+  <div
+  id="modal"
+  class="hidden"
+>
+  <p></p>
+</div>
+<div class="container">
+  <h1>Añadir nuevo producto</h1>
+  <form id="addProduct" method="post" action="/products">
+    <% inputs.forEach(input=>{ %>
+      <div>
+        <label for=<%=input.id %> > <%=input.label %> </label>
+        <input
+          id=<%=input.id%>
+          name=<%=input.name%>
+          type=<%=input.type%>
+          placeholder='<%=input.placeholder%>'
+          required=<%=input.required%>
+          <% if(input.step){%>
+            step=<%=input.step%>
+          <%} %>
+        >
+      </div>
+    <%}) %>
+    <button
+      type="submit"
+    >
+      <p>Añadir</p>
+    </button>
+  </form>
+  <a href="http://localhost:8080/products">Ver productos</a>
+</div>
+<button id="randomData"><p>Añadir datos random</p></button>
+<%- include('partials/foo') %>
+<script src="scripts/randomData.js"></script>
+<script src="scripts/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<div class="container">
+  <h1>Productos</h1>
+  <div class="scroll">
+
+    <table id="product_table">
+      <thead>
+        <tr>
+          {{#each table_headers}}
+            <th>{{this}}</th>
+          {{/each}}
+        </tr>
+      </thead>
+      {{#each products}}
+        <tr class="item">
+          <td class="thumbnail"><img src={{this.thumbnail}} alt="" /></td>
+          <td class="name"><p>{{this.name}}</p></td>
+          <td class="price">
+            <div>
+              <p>$</p>
+              <p>{{this.price}}</p>
+            </div>
+          </td>
+        </tr>
+      {{/each}}
+      {{#unless products.length}}
+        <tr class="item">
+          <td colspan="3" >No se encontraron productos.</td>
+        </tr>
+      {{/unless}}
+    </table>
+  </div>
+  <a href="http://localhost:8080">Añadir Producto</a>
+</div>

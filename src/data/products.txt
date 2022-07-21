@@ -1,0 +1,23 @@
+{
+  "nextId": 4,
+  "data": [
+    {
+      "name": "Mochila",
+      "price": 200,
+      "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/calculator-math-tool-school-1024.png",
+      "id": 1
+    },
+    {
+      "name": "Regla",
+      "price": 7,
+      "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/bag-pack-container-school-1024.png",
+      "id": 2
+    },
+    {
+      "name": "Mochila",
+      "price": 75.3,
+      "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/book-note-paper-school-1024.png",
+      "id": 3
+    }
+  ]
+}

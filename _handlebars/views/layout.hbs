@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles/global.css">
+    {{#each head_scripts}}
+      {{{this}}}
+    {{/each}}
+    <title>Template enginer with handlebars</title>
+</head>
+<body>
+
+    {{{body}}}
+    {{#each foot_scripts}}
+      {{{this}}}
+    {{/each}}
+    <div id="engine">
+      <p>Engine - Handlebars</p>
+    </div>  
+</body>
+</html> 

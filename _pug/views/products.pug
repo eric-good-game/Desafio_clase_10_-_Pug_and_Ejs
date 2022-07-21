@@ -1,0 +1,24 @@
+extends layout.pug
+
+block head_scripts
+  link(rel="stylesheet", href="/styles/products.css")
+
+block foot_scripts
+
+block content
+  .container
+    h1 Productos
+    .scroll
+      table#product_table
+        thead
+          tr 
+            each title in table_headers
+              th= title
+        each product in products
+          +itemProduct(product)
+        unless products.length
+          tr.item
+            td(colspan=3 class = 'empty'): p No hay productos disponibles.
+    a(
+      href="http://localhost:8080"
+    ) Añadir producto

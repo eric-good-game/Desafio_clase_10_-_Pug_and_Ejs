@@ -1,0 +1,22 @@
+extends layout.pug
+
+block head_scripts
+  link(rel="stylesheet", href="./styles/animations.css")
+  link(rel="stylesheet", href="./styles/index.css")
+
+block foot_scripts
+  script(src="scripts/randomData.js") 
+  script(src="scripts/index.js") 
+
+block content
+  #modal.hidden
+    p
+  .container 
+    h1 Añadir nuevo producto
+    form(action="/products" method="POST" id="addProduct") 
+      each input in inputs 
+        +formInput(input)
+      button(type="submit") 
+        p Añadir
+    a(href="http://localhost:8080/products") Ver productos
+  button#randomData: p Añadir datos random

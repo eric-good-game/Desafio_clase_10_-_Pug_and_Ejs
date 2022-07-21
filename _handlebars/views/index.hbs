@@ -1,0 +1,30 @@
+<div id="modal" class="hidden">
+  <p></p>
+</div>
+<div class="container">
+  <h1>Añadir nuevo producto</h1>
+  <form action="/products" method="POST" id="addProduct">
+    {{#each inputs}}
+      <div>
+        <label for={{this.id}}>{{this.label}}</label>
+        <input
+          id={{this.id}}
+          name={{this.name}}
+          type={{this.type}}
+          placeholder='{{this.placeholder}}'
+          required={{this.required}}
+          {{#if this.step}}
+            step={{this.step}}
+          {{/if}}
+        >
+      </div>
+    {{/each}}
+    <button
+      type="submit"
+    >
+      <p>Añadir</p>
+    </button>
+  </form>
+  <a href="http://localhost:8080/products">Ver productos</a>
+</div>
+<button id="randomData"><p>Añadir datos random</p></button>

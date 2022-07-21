@@ -1,0 +1,22 @@
+mixin formInput(input)
+  - const {label, ...attrs} = input
+  div 
+    label(for=input.id)= label
+    input&attributes(attrs)
+ 
+mixin itemProduct(product)
+  - const keys = ['thumbnail','name','price']
+  tr.item
+    for key in keys
+      td(class=key)
+        -
+        case key
+          when 'thumbnail'
+            img(src=product[key], alt="")
+          when 'name'
+            p= product[key]
+          when 'price'
+            div
+              p $
+              p= product[key]
+        
